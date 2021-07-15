@@ -1,333 +1,315 @@
+<style>
+  .bg-gw {
+    background-color: grey;
+  }
 
-    <section id="featured">
-      <!-- start slider -->
-      <!-- Slider -->
-      <div id="nivo-slider">
-        <div class="nivo-slider">
-          <!-- Slide #1 image -->
-          <img src="<?= base_url('asset/') ?>img/slides/nivo/bg-1.jpg" alt="" title="#caption-1" />
-          <!-- Slide #2 image -->
-          <img src="<?= base_url('asset/') ?>img/slides/nivo/bg-2.jpg" alt="" title="#caption-2" />
-          <!-- Slide #3 image -->
-          <img src="<?= base_url('asset/') ?>img/slides/nivo/bg-3.jpg" alt="" title="#caption-3" />
+  .collapse-content .fa.fa-heart:hover {
+    color: #f44336 !important;
+  }
+
+  .collapse-content .fa.fa-share-alt:hover {
+    color: #0d47a1 !important;
+  }
+
+  .mt-2 {
+    padding-top: 10px;
+
+  }
+
+  .mt-x {
+    margin-top: -20px !important;
+    margin-bottom: 10px;
+
+  }
+
+  .w-100 {
+    height: 200px
+  }
+
+  .card {
+    border: .5px black solid;
+    padding: 10px;
+
+  }
+
+  .pb-1 {
+    padding-bottom: 20px;
+  }
+</style>
+<section id="featured">
+  <div id="nivo-slider">
+    <div class="nivo-slider">
+      <?php foreach ($slider as $key) : ?>
+        <img src="<?= base_url('asset/') ?>img/slides/nivo/<?= $key['img'] ?>" alt="" />
+      <?php endforeach ?>
+    </div>
+  </div>
+</section>
+<section class="callaction">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="big-cta">
+          <div class="cta-text">
+            <h3>Lebih dari <span class="highlight"><strong>500 orang</strong></span> telah bergabung menjadi anggota KoSPE</h3>
+          </div>
+          <div class="cta floatright">
+            <a class="btn btn-large btn-theme btn-rounded" href="https://member.kospe.net/082211777107">Gabung Sekarang</a>
+
+          </div>
         </div>
-        <div class="container">
+      </div>
+    </div>
+  </div>
+</section>
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/1.png' ?>" alt="" width="50%">
+              </div>
+              <div class="text">
+                <h6>1000 Pesantren</h6>
+                <p>
+                  Mewujudkan 1000 Pesantren pengahfal Alquran di seluruh Indonesia
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/2.png' ?>" alt="" width="50%">
+              </div>
+              <div class="text">
+                <h6>Memberantas KPR</h6>
+                <p>
+                  Memberantas KPR (Kefakiran, Pemurtadan dan Riba)
+                </p>
+
+              </div>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/3.png' ?>" alt="" width="50%">
+              </div>
+              <div class="text">
+                <h6>Lembaga Syariah</h6>
+                <p>
+                  Menjadi lembaga keuangan syariah dan menjalankan program bisnis berasaskan syariah
+                </p>
+
+              </div>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/4.png' ?>" alt="" width="50%">
+              </div>
+              <div class="text">
+                <h6>Distibutor Produk Halal</h6>
+                <p>
+                  Memproduksi dan memasarkan produk-produk halal ke seluruh dunia
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- divider -->
+    <div class="row">
+      <div class="span4">
+        <div class="solidline">
+          <a href="<?= base_url('home/hni') ?>"><img src="<?= base_url('asset/img/klik3.png') ?>" alt=""></a>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="solidline">
+          <a href="<?= base_url('home/ajukan') ?>"><img src="<?= base_url('asset/img/klik1.png') ?>" alt=""></a>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="solidline">
+          <a href="<?= base_url('home/simpan') ?>"><img src="<?= base_url('asset/img/klik2.png') ?>" alt=""></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <h4 class="heading">Unit <strong>Usaha KoSPE</strong></h4>
+      <div class="span12">
+        <div class="row">
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/uspps.png' ?>" alt="" width="50%">
+              </div>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/agro.png' ?>" alt="" width="50%">
+              </div>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/alfalah.png' ?>" alt="" width="50%">
+              </div>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/alafahtour.png' ?>" alt="" width="50%">
+              </div>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/okeywisata.png' ?>" alt="" width="50%">
+              </div>
+            </div>
+          </div>
+          <div class="span3">
+            <div class="box aligncenter">
+              <div class="aligncenter icon">
+                <img src="<?= base_url() . 'asset/img/kospe/okekreatif.png' ?>" alt="" width="50%">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+
+    <!-- end divider -->
+    <div class="row">
+      <div class="span12">
+        <h4 class="heading">Promo <strong>KoSPE 2021</strong></h4>
+        <?php if ($promo != null) : ?>
           <div class="row">
-            <div class="span12">
-              <!-- Slide #1 caption -->
-              <div class="nivo-caption" id="caption-1">
-                <div>
-                  <h2>Awesome <strong>features</strong></h2>
-                  <p>
-                    Lorem ipsum dolor sit amet nsectetuer nec Vivamus. Curabitu laoreet amet eget. Viurab oremd ellentesque ameteget. Lorem ipsum dolor sit amet nsectetuer nec vivamus.
-                  </p>
-                  <a href="#" class="btn btn-theme">Read More</a>
-                </div>
-              </div>
-              <!-- Slide #2 caption -->
-              <div class="nivo-caption" id="caption-2">
-                <div>
-                  <h2>Fully <strong>responsive</strong></h2>
-                  <p>
-                    Lorem ipsum dolor sit amet nsectetuer nec Vivamus. Curabitu laoreet amet eget. Viurab oremd ellentesque ameteget. Lorem ipsum dolor sit amet nsectetuer nec vivamus.
-                  </p>
-                  <a href="#" class="btn btn-theme">Read More</a>
-                </div>
-              </div>
-              <!-- Slide #3 caption -->
-              <div class="nivo-caption" id="caption-3">
-                <div>
-                  <h2>Very <strong>customizable</strong></h2>
-                  <p>
-                    Lorem ipsum dolor sit amet nsectetuer nec Vivamus. Curabitu laoreet amet eget. Viurab oremd ellentesque ameteget. Lorem ipsum dolor sit amet nsectetuer nec vivamus.
-                  </p>
-                  <a href="#" class="btn btn-theme">Read More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end slider -->
-    </section>
-    <section class="callaction">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div class="big-cta">
-              <div class="cta-text">
-                <h3>We've created more than <span class="highlight"><strong>5000 websites</strong></span> this year!</h3>
-              </div>
-              <div class="cta floatright">
-                <a class="btn btn-large btn-theme btn-rounded" href="#">Request a quote</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="content">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
-            <div class="row">
-              <div class="span3">
-                <div class="box aligncenter">
-                  <div class="aligncenter icon">
-                    <i class="icon-briefcase icon-circled icon-64 active"></i>
-                  </div>
-                  <div class="text">
-                    <h6>Corporate business</h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                    </p>
-                    <a href="#">Learn more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="span3">
-                <div class="box aligncenter">
-                  <div class="aligncenter icon">
-                    <i class="icon-desktop icon-circled icon-64 active"></i>
-                  </div>
-                  <div class="text">
-                    <h6>Responsive theme</h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                    </p>
-                    <a href="#">Learn more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="span3">
-                <div class="box aligncenter">
-                  <div class="aligncenter icon">
-                    <i class="icon-beaker icon-circled icon-64 active"></i>
-                  </div>
-                  <div class="text">
-                    <h6>Coded carefully</h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                    </p>
-                    <a href="#">Learn more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="span3">
-                <div class="box aligncenter">
-                  <div class="aligncenter icon">
-                    <i class="icon-coffee icon-circled icon-64 active"></i>
-                  </div>
-                  <div class="text">
-                    <h6>Sit and enjoy</h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                    </p>
-                    <a href="#">Learn more</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- divider -->
-        <div class="row">
-          <div class="span12">
-            <div class="solidline">
-            </div>
-          </div>
-        </div>
-        <!-- end divider -->
-        <!-- Portfolio Projects -->
-        <div class="row">
-          <div class="span12">
-            <h4 class="heading">Some of recent <strong>works</strong></h4>
-            <div class="row">
-              <section id="projects">
-                <ul id="thumbs" class="portfolio">
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="<?= base_url('asset/') ?>img/works/full/image-01-full.jpg">
-                      <span class="overlay-img"></span>
-                      <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-01.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="img/works/full/image-02-full.jpg">
-                      <span class="overlay-img"></span>
-                      <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-02.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="img/works/full/image-03-full.jpg">
-                      <span class="overlay-img"></span>
-                      <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="img/works/full/image-04-full.jpg">
-                      <span class="overlay-img"></span>
-                      <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-04.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-4" data-type="web">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="img/works/full/image-05-full.jpg">
-                      <span class="overlay-img"></span>
-                      <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-05.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-5" data-type="icon">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Clouds" href="img/works/full/image-06-full.jpg">
-                      <span class="overlay-img"></span>
-                      <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-06.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="img/works/full/image-07-full.jpg">
-                      <span class="overlay-img"></span>
-                      <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-07.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Dark" href="img/works/full/image-08-full.jpg">
-                      <span class="overlay-img"></span>
-                      <span class="overlay-img-thumb font-icon-plus"></span>
-                    </a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-08.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                </ul>
-              </section>
-            </div>
-          </div>
-        </div>
-        <!-- End Portfolio Projects -->
-        <!-- divider -->
-        <div class="row">
-          <div class="span12">
-            <div class="solidline">
-            </div>
-          </div>
-        </div>
-        <!-- end divider -->
-        <div class="row">
-          <div class="span12">
-            <h4>Very satisfied <strong>clients</strong></h4>
-            <ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client1.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client2.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client3.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client4.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client5.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client6.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client1.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client2.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client3.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client4.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client5.png" class="client-logo" alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="img/dummies/clients/client6.png" class="client-logo" alt="" />
-                </a>
-              </li>
+            <ul id="thumbs">
+              <?php foreach ($promo as $key) : ?>
+                <li class="item-thumbs span4">
+                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                  <a href="https://bit.ly/PembiayaanKoSPE">
+                    <img src="<?= base_url('asset/img/promo/' . $key->img) ?>" alt="<?= $key->judul ?>">
+                  </a>
+
+                </li>
+              <?php endforeach ?>
             </ul>
           </div>
+        <?php else : ?>
+          Belum ada Promo
+
+        <?php endif ?>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="span12">
+        <h4 class="heading">Produk <strong>Pembiayaan</strong></h4>
+        <div class="row">
+          <ul id="thumbs">
+            <?php foreach ($pembiayaan as $key) : ?>
+              <li class="item-thumbs span4">
+                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                <a href="https://bit.ly/PembiayaanKoSPE">
+                  <img src="<?= base_url('asset/img/produk/' . $key->img) ?>" alt="<?= $key->nama ?>">
+                </a>
+
+              </li>
+            <?php endforeach ?>
+          </ul>
         </div>
       </div>
-    </section>
-    <section id="bottom">
-      <div class="container">
+    </div>
+
+    <div class="row">
+      <div class="span12">
+        <h4 class="heading">Produk <strong>Simpanan</strong></h4>
         <div class="row">
-          <div class="span12">
-            <div class="aligncenter">
-              <div id="twitter-wrapper">
-                <div id="twitter">
+          <ul id="thumbs">
+            <?php foreach ($simpanan as $key) : ?>
+              <li class="item-thumbs span4">
+                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                <a href="https://bit.ly/PembiayaanKoSPE">
+                  <img src="<?= base_url('asset/img/produk/' . $key->img) ?>" alt="<?= $key->nama ?>">
+                </a>
+
+              </li>
+            <?php endforeach ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Projects -->
+
+
+
+  </div>
+</section>
+<section class="callaction">
+  <div class="container">
+
+    <div class="row ">
+      <div class="span12">
+        <h4 class="heading">Berita dan <strong>Artikel</strong></h4>
+        <div class="row">
+          <?php foreach ($post as $key) : ?>
+            <?php $slug = strtolower(str_replace(' ', '-', $key->judul));
+            ?>
+            <div class="span4">
+              <div class="card">
+                <img class="card-img-top" src="<?= base_url('asset/img/post/' . $key->img) ?>" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><?= $key->judul ?></h5>
+                  <p class="card-text" style="margin-top: -20px;"><?= html_entity_decode(substr($key->isi, 0, 100)) ?></p>
+                  <br>
+                  <a href="<?= base_url('post/' . str_replace('/', '', shortdate_indo($key->date))) . '/' . str_replace(' ', '-', $key->judul) ?>" class="btn btn-danger">Read More</a>
                 </div>
               </div>
             </div>
-          </div>
+          <?php endforeach ?>
+
         </div>
       </div>
-    </section>
-   
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container" style="margin-top: 40px;">
+    <!-- end divider -->
+    <div class="row">
+      <div class="span12">
+        <h4>Mitra <strong>Kerja</strong></h4>
+        <?php $this->load->view('template/logo-mitra') ?>
+      </div>
+    </div>
+  </div>
+  
+    <div class="modal fade" id="popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <a href="#" data-dismiss="modal" style="font-size:25px; text-decoration: none; position: absolute; bottom:-40px; margin: 100px; padding: 10px; line-height:10px; background-color: white; border-radius:20px">x</a>
+      <div class="modal-content" style="padding: 10px">
+        <img width="100%" src="<?= base_url('asset/img/promo/'.$iklan) ?>" alt="">
+      </div>
+    </div>
+  

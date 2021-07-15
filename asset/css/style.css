@@ -995,7 +995,7 @@ form#commentform textarea {
 
 .item-thumbs .hover-wrap .overlay-img-thumb {
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 50%;
   margin: -16px 0 0 -16px;
   color: #fff;
