@@ -73,62 +73,62 @@
     <table style="width: 100%; border: 1px solid black; padding: 15px 25px 15px 25px">
       <tr>
         <strong>
-        <td>
-          <table style="width: 100%; font-style: bold;">
-            <tr>
-              <td>No. Rekening</td>
-              <td>: <?= $user->no_rek ?></td>
-            </tr>
-            <tr>
-              <td>Nama Anggota</td>
-              <td>: <?= $user->nama ?></td>
-            </tr>
-            <tr>
-              <td>Total Pembiayaan</td>
-              <td>: <?= rupiah($detail->hrg_beli) ?></td>
-            </tr>
-            <tr>
-              <td>Harga Jual ke Anggota</td>
-              <td>: <?= rupiah($detail->hrg_jual) ?></td>
-            </tr>
-            <tr>
-              <td>Margin Pembiayaan</td>
-              <td>: <?= rupiah($detail->hrg_jual - $detail->hrg_beli) ?></td>
-            </tr>
-            <tr>
-              <td>Tenor (bulan)</td>
-              <td>: <?= $detail->jangka ?> bulan</td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <table style="width: 100%;">
-            <tr>
-              <td>Akad</td>
-              <td>: <?= $akad->nama ?></td>
-            </tr>
-            <tr>
-              <td>Angsuran Perbulan</td>
-              <td>: <?= rupiah($detail->angsur) ?></td>
-            </tr>
-            <tr>
-              <td>Tanggal Jatuh Tempo</td>
-              <td>: <?= substr($user->tgl_dropping, 5, 2) ?></td>
-            </tr>
-            <tr>
-              <td>Tanggal Realisasi</td>
-              <td>: <?= $user->tgl_dropping ?></td>
-            </tr>
-            <tr>
-              <td>Tanggal Akhir Pembiayaan</td>
-              <td>: <?= date("Y-m-d", strtotime($user->tgl_dropping . ' + ' . $detail->jangka . ' Months')) ?></td>
-            </tr>
-            <tr>
-              <td>...</td>
-              <td>...</td>
-            </tr>
-          </table>
-        </td>
+          <td>
+            <table style="width: 100%; font-style: bold;">
+              <tr>
+                <td>No. Rekening</td>
+                <td>: <?= $user->no_rek ?></td>
+              </tr>
+              <tr>
+                <td>Nama Anggota</td>
+                <td>: <?= $user->nama ?></td>
+              </tr>
+              <tr>
+                <td>Total Pembiayaan</td>
+                <td>: <?= rupiah($detail->hrg_beli) ?></td>
+              </tr>
+              <tr>
+                <td>Harga Jual ke Anggota</td>
+                <td>: <?= rupiah($detail->hrg_jual) ?></td>
+              </tr>
+              <tr>
+                <td>Margin Pembiayaan</td>
+                <td>: <?= rupiah($detail->hrg_jual - $detail->hrg_beli) ?></td>
+              </tr>
+              <tr>
+                <td>Tenor (bulan)</td>
+                <td>: <?= $detail->jangka ?> bulan</td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table style="width: 100%;">
+              <tr>
+                <td>Akad</td>
+                <td>: <?= $akad->nama ?></td>
+              </tr>
+              <tr>
+                <td>Angsuran Perbulan</td>
+                <td>: <?= rupiah($detail->angsur) ?></td>
+              </tr>
+              <tr>
+                <td>Tanggal Jatuh Tempo</td>
+                <td>: <?= substr($user->tgl_dropping, 5, 2) ?></td>
+              </tr>
+              <tr>
+                <td>Tanggal Realisasi</td>
+                <td>: <?= $user->tgl_dropping ?></td>
+              </tr>
+              <tr>
+                <td>Tanggal Akhir Pembiayaan</td>
+                <td>: <?= date("Y-m-d", strtotime($user->tgl_dropping . ' + ' . $detail->jangka . ' Months')) ?></td>
+              </tr>
+              <tr>
+                <td>...</td>
+                <td>...</td>
+              </tr>
+            </table>
+          </td>
         </strong>
       </tr>
 
@@ -140,17 +140,19 @@
       <thead>
         <tr class="garis">
           <th class="garis" rowspan="2">No</th>
-          <th class="garis" rowspan="2">Jadwal Pembayaran <br> Angsuran</th>
+          <th class="garis" colspan="2">Tgl. Transaksi</th>
           <th class="garis" colspan="4">Perhitungan Angsuran</th>
           <th class="garis" rowspan="2">Realisasi <br> Pembayaran</th>
           <th class="garis" colspan="2">Sisa</th>
         </tr>
         <tr>
+          <td class="garis">Jadwal</td>
+          <td class="garis">Tgl. Bayar</td>
           <td class="garis">Sisa Pokok</td>
-          <td class="garis">Sisa <?= $akad->istilah?></td>
+          <td class="garis">Sisa <?= $akad->istilah ?></td>
           <td class="garis">Pokok</td>
-          <td class="garis"><?= $akad->istilah?></td>
-          
+          <td class="garis"><?= $akad->istilah ?></td>
+
           <td class="garis">Tititpan</td>
           <td class="garis">Kekurangan</td>
         </tr>
@@ -158,20 +160,22 @@
       <tbody>
         <?php $no = 1;
         $n = 1;
-        foreach ($angsuran as $key) { 
-          if ($key->angsuran_ke != 0) {?>
-          <tr>
-            <td class="garis"><?= $no++ ?></td>
-            <td class="garis"><?php echo date("Y-m-d", strtotime($user->tgl_dropping . ' + ' . $n++ . ' Months')) ?></td>
-            <td class="garis"><?= rupiah($key->sisa_pokok) ?></td>
-            <td class="garis"><?= rupiah($key->sisa_margin) ?></td>
-            <td class="garis"><?= rupiah($key->pokok) ?></td>
-            <td class="garis"><?= rupiah($key->margin) ?></td>
-            <td class="garis"><?= rupiah($key->jumlah) ?></td>
-            <td class="garis"><?= rupiah($key->titipan) ?></td>
-            <td class="garis"><?= rupiah($key->kekurangan) ?></td>
-          </tr>
-        <?php }} ?>
+        foreach ($angsuran as $key) {
+          if ($key->angsuran_ke != 0) { ?>
+            <tr>
+              <td class="garis"><?= $no++ ?></td>
+              <td class="garis"><?php echo date("Y-m-d", strtotime($user->tgl_dropping . ' + ' . $n++ . ' Months')) ?></td>
+              <td class="garis"><?= $key->created_at ?></td>
+              <td class="garis"><?= rupiah($key->sisa_pokok) ?></td>
+              <td class="garis"><?= rupiah($key->sisa_margin) ?></td>
+              <td class="garis"><?= rupiah($key->pokok) ?></td>
+              <td class="garis"><?= rupiah($key->margin) ?></td>
+              <td class="garis"><?= rupiah($key->jumlah) ?></td>
+              <td class="garis"><?= rupiah($key->titipan) ?></td>
+              <td class="garis"><?= rupiah($key->kekurangan) ?></td>
+            </tr>
+        <?php }
+        } ?>
       </tbody>
 
     </table>
