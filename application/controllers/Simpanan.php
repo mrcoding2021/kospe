@@ -10,7 +10,6 @@ class Simpanan extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('Model_global', 'mapp');
         $this->load->helper('tgl_indo');
-        
     }
 
     public function core($data)
@@ -46,131 +45,19 @@ class Simpanan extends CI_Controller
     }
 
 
-    public function simpro()
+    public function detail($nama)
     {
+        $this->db->where('nama', str_replace('-',' ',$nama));
+        $produk = $this->db->get('paket')->row();
         $data['detail'] = array(
-            'img' => 'simpro.jpg',
-            'title' => 'Simpanan Produktif',
-            'page' => 'pages/simpro',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-
-    public function siroh()
-    {
-        $data['detail'] = array(
-            'img' => 'SIROH.jpg',
-            'title' => 'Simpanan Umroh',
-            'page' => 'pages/siroh',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-
-    public function siji()
-    {
-        $data['detail'] = array(
-            'img' => 'siji.jpg',
-            'title' => 'Simpanan Haji',
-            'page' => 'pages/simpro',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-    public function siwaq()
-    {
-        $data['detail'] = array(
-            'img' => 'siwaq.jpg',
-            'title' => 'Simpanan Wisata Qurani',
-            'page' => 'pages/siwaq',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-
-    public function sisuka()
-    {
-        $data['detail'] = array(
-            'img' => 'sisuka.jpg',
-            'title' => 'Simpanan Sukarela',
-            'page' => 'pages/sisuka',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-
-    public function saqu()
-    {
-        $data['detail'] = array(
-            'img' => 'saqu.jpg',
-            'title' => 'Simpanan Qurban',
-            'page' => 'pages/saqu',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-
-    public function sidik()
-    {
-        $data['detail'] = array(
-            'img' => 'sidiq.jpg',
-            'title' => 'Simpanan Pendidikan',
-            'page' => 'pages/sidik',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-
-    public function sinar()
-    {
-        $data['detail'] = array(
-            'img' => 'sinar.jpg',
-            'title' => 'Simpanan Nikah dan Resepsi',
-            'page' => 'pages/sinar',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-
-    public function akad()
-    {
-        $data['detail'] = array(
-            'img' => 'akad.jpg',
-            'title' => 'Jenis-jenis Akad Syariah',
-            'page' => 'pages/akad',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-
-    public function wajib()
-    {
-        $data['detail'] = array(
-            'img' => 'wajib.jpg',
-            'title' => 'Simpanan Wajib',
-            'page' => 'pages/wajib',
-            'parent' => 23,
-            'header' => 'Simpanan'
-        );
-        $this->core($data);
-    }
-
-    public function pokok()
-    {
-        $data['detail'] = array(
-            'img' => 'pokok.jpg',
-            'title' => 'Simpanan Pokok',
-            'page' => 'pages/pokok',
+            'produk' => $produk,
+            'img' => $produk->img,
+            'img_big' => $produk->img_big,
+            'isi' => $produk->isi,
+            'akad' => $produk->akad,
+            'ketentuan' => $produk->ketentuan,
+            'title' => $produk->nama,
+            'page' => 'pages/detailSimpanan',
             'parent' => 23,
             'header' => 'Simpanan'
         );

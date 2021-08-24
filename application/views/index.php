@@ -305,11 +305,12 @@
       </div>
     </div>
   </div>
-  
+  <?php if ($iklan != '') {?>
     <div class="modal fade" id="popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <a href="#" data-dismiss="modal" style="font-size:25px; text-decoration: none; position: absolute; bottom:-40px; margin: 100px; padding: 10px; line-height:10px; background-color: white; border-radius:20px">x</a>
       <div class="modal-content" style="padding: 10px">
         <img width="100%" src="<?= base_url('asset/img/promo/'.$iklan) ?>" alt="">
       </div>
     </div>
-  
+  <?php }?>
+</section>

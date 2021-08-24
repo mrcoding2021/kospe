@@ -51,7 +51,7 @@ class Home extends CI_Controller
 		$this->db->order_by('id', 'desc');
 		$this->db->where('is_active', 1);
 		$data['promo'] = $this->db->get('tb_promo')->result();
-		$data['iklan'] = 'caf9ec120cfd5cff1c09bcc5a0d578e3.jpeg';
+		$data['iklan'] = '';
 		$this->core($data);
 	}
 

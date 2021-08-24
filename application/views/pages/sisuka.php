@@ -36,41 +36,33 @@
 
                                  <h4><?= $detail['title'] ?></h4>
                                  <p>
-                                     Simpanan Sukarela (SISUKA) Adalah simpanan dengan akad wadiah ya dhomanah yang di setor setiap saat dengan jumlah tidak ditentukan dan boleh di tarik kapan saja oleh anggota
-
+                                     Adalah simpanan dengan akad wadiah ya dhomanah yang di setor setiap saat dengan jumlah tidak ditentukan dan boleh di tarik kapan saja oleh anggota
                                  </p>
                              </div>
                              <hr>
                              <div class="span4">
 
                                  <h4>Akad Syariah</h4>
-                                 <p><strong> Wadiah yad adh-dhamanah</strong> adalah akad penitipan uang, dimana pihak koperasi (pihak yang dititipi) boleh memanfaatkan uang milik nasabah (pihak penitip).
+                                 <p><strong> Wadiah yad adh-dhamanah</strong> adalah akad penitipan uang, dimana pihak koperasi (pihak yang dititipi) boleh memanfaatkan uang milik nasabah (pihak penitip). <br>
                                      Pihak yang dititipi boleh secara bebas mengelola uang titipan anggota tersebut.
                                      Anggota (pihak penitip) boleh mengambil uang sewaktu-waktu atau kapanpun kehendaki, dan pihak yang dititipi harus siap memberikannya secara utuh.
 
                                  </p>
                              </div>
                              <hr>
-                             <h4>Persyaratan</h4>
+                             <h4>Mekanisme :</h4>
                              <p>
                              <ul>
                                  <li>Menjadi anggota KOSPE</li>
-                                 <li>Membayar biaya administrasi Rp 10.000,-</li>
-                                 <li>Melakukan penyetoran awal sebesar Rp. 100.000,-</li>
-                                 <li>Simpanan selanjutnya minimal Rp 100.000,-</li>
-                                 <li>Simpanan hanya bisa diambil sesuai tujuan simpanan</li>
+                                 <li>Bebas biaya administrasi bulanan</li>
+                                 <li>Disetor dan diambil setiap saat</li>
                              </ul>
                              </p>
                              <hr>
                              <h4>Bagi Hasil</h4>
                              <p>Tidak Ada Bagi Hasil</p>
 
-                             <div class="bottom-article">
-                                 <ul class="meta-post">
-                                     <li><i class="icon-user"></i><a href="#"> Admin</a></li>
-                                 </ul>
 
-                             </div>
                          </div>
                      </div>
                  </article>

@@ -25,7 +25,7 @@
 
              <div class="span4">
 
-                 <?php $this->load->view('template/sidebar'); ?>
+                 <?php $this->load->view('pages/sidebar'); ?>
 
              </div>
 

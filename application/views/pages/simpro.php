@@ -1,81 +1,93 @@
-<section id="inner-headline">
-    <div class="container">
-        <div class="row">
-            <div class="span8">
-                <div class="inner-heading">
-                    <h2><?= $detail['title'] ?></h2>
-                </div>
-            </div>
-            <div class="span4">
-                <ul class="breadcrumb">
-                    <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
-                    <li><a href="#"><?= $detail['header'] ?></a><i class="icon-angle-right"></i></li>
-                    <li class="active"><?= $detail['title'] ?></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="content">
-    <div class="container">
-        <div class="row">
-            <div class="span4">
-                <?php $this->load->view('template/sidebar'); ?>
-            </div>
-            <div class="span8">
-                <article>
-                    <div class="row">
-                        <div class="span8">
-                            <div class="post-image">
-                                <img src="<?= base_url('asset/img/post/')  ?>simprofoto.jpg" alt="" width="100%" />
-                            </div>
-                            <div class="span3">
-                                <img src="<?= base_url('asset/img/post/')  ?>simpro2.jpg" alt="" width="100%" />
-                            </div>
-                            <div class="span4">
+ <section id="inner-headline">
+     <div class="container">
+         <div class="row">
+             <div class="span8">
+                 <div class="inner-heading">
+                     <h2><?= $detail['title'] ?></h2>
+                 </div>
+             </div>
+             <div class="span4">
+                 <ul class="breadcrumb">
+                     <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+                     <li><a href="#"><?= $detail['header'] ?></a><i class="icon-angle-right"></i></li>
+                     <li class="active"><?= $detail['title'] ?></li>
+                 </ul>
+             </div>
+         </div>
+     </div>
+ </section>
+ <section id="content">
+     <div class="container">
+         <div class="row">
+             <div class="span4">
+                 <aside class="left-sidebar">
 
-                                <h4><?= $detail['title'] ?></h4>
-                                <p>
-                                    Simpanan Produktif (SIMPRO) Adalah simpanan Produktif Anggota yang dikelola secara syariah dengan bagi hasil yang produktif setiap bulannya. Di setor minimal sebesar Rp.5.000,000,- dengan spesial nisbah bagi hasil 52,5% perbulan dalam jangka waktu simpanan 3,6,12 bulan bersifat Roll Over saat jangka waktu berakhir.
+                     <div class="widget">
+                         <h5 class="widgetheading">Menu Lain</h5>
+                         <ul class="cat">
+                             <?php $this->load->view('template/menu'); ?>
+                         </ul>
+                     </div>
+                     <div class="widget">
+                         <h5 class="widgetheading">Post Teerbaru</h5>
+                         <ul class="recent">
+                             <?php
+                                $this->load->view('template/blog');
+                                ?>
+                         </ul>
+                     </div>
+
+                 </aside>
+             </div>
+             <div class="span8">
+                 <article>
+                     <div class="row">
+                         <div class="span8">
+                             <div class="post-image">
+                                 <img src="<?= base_url('asset/img/post/')  ?>sijifoto.jpg" alt="" width="100%" />
+                             </div>
+                             <div class="span3">
+                                 <img src="<?= base_url('asset/img/post/')  ?>siji.jpg" alt="" width="100%" />
+                             </div>
+                             <div class="span4">
+                                 <h4><?= $detail['title'] ?></h4>
+                                 <p>
+                                     Adalah simpanan Anggota yang disimpan untuk perencanaan berangkat haji atau daftar haji . Yang di setor setiap bulan minimal Rp.100.000,- dan dapat di ambil jika sudah mencukupi untuk biaya daftar haji atau ongkos berangkat haji dengan nisbah bagi hasil setiap bulan untuk anggota penyimpan.
+                                 </p>
+                             </div>
+                             <hr>
+                             <div class="span4">
+                                 <h4>Akad Syariah</h4>
+                                 <p><strong>Mudharobah</strong> adalah pemilik modal menyerahkan modalnya kepada pekerja/pedagang/ pebisnis untuk diputar sebagai usaha, sedangkan keuntungan usaha dibagi menurut kesepakatan bersama. Atau, definisi lain menurut terminologi koperasi syariah, Mudharobah adalah bentuk kerja sama antara koperasi selaku pemilik dana (shahibul maal) dengan anggotanya atau pihak lain yang bertindak selaku pengelola dana (mudharib) produktif dan halal.
+                                 </p>
+                             </div>
+                             <hr>
+                             <h4>Mekanisme :</h4>
+                             <p>
+                             <ul>
+                                 <li>Menjadi anggota KOSPE</li>
+                                 <li>Bebas biaya administrasi bulanan</li>
+                                 <li>Pembukaan Rekening Simpanan Rp.10.000,-</li>
+                                 <li>Penyetoran Awal Sebesar Rp.100.000</li>
+                                 <li>Setoran minimal Rp. 100.000,- / bulan</li>
+                                 <li>Bagi hasil masuk ke rek.Simpanan Haji</li>
+                             </ul>
+                             </p>
+                             <hr>
+                             <h4>Bagi Hasil</h4>
+                             <p>Ada Bagi Hasil</p>
+
+                             <h4>Cara Buka Produk Simpanan</h4>
+                             <iframe width="100%" height="450" src="https://www.youtube.com/embed/gPkT7XZgtfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                             <a href="https://www.youtube.com/channel/UCj7new7-5zDU0eR19fc_zeg" class="btn btn-sm btn-primary">Subscribe Youtube Channel KoSPE</a>
+                             <a href="https://wa.me/628118807177" class="btn btn-sm btn-danger">Tanya CRM KoSPE</a>
+                         </div>
+                     </div>
+                 </article>
 
 
-                                </p>
-                            </div>
-                            <hr>
-                            <div class="span4">
 
-                                <h4>Akad Syariah</h4>
-                                <p><strong>Mudharobah</strong> adalah pemilik modal menyerahkan modalnya kepada pekerja/pedagang/ pebisnis untuk diputar sebagai usaha, sedangkan keuntungan usaha dibagi menurut kesepakatan bersama. Atau, definisi lain menurut terminologi koperasi syariah, Mudharobah adalah bentuk kerja sama antara koperasi selaku pemilik dana (shahibul maal) dengan anggotanya atau pihak lain yang bertindak selaku pengelola dana (mudharib) produktif dan halal.
-                                </p>
-                            </div>
-                            <hr>
-                            <h4>Persyaratan</h4>
-                            <p>
-                            <ul>
-                                <li>Menjadi anggota KOSPE</li>
-                                <li>Membayar biaya administrasi Rp 10.000,-</li>
-                                <li>Melakukan penyetoran awal sebesar Rp. 100.000,-</li>
-                                <li>Simpanan selanjutnya minimal Rp 100.000,-</li>
-                                <li>Simpanan hanya bisa diambil sesuai tujuan simpanan</li>
-                            </ul>
-                            </p>
-                            <hr>
-                            <h4>Bagi Hasil</h4>
-                            <p>Ada Bagi Hasil</p>
-
-                            <div class="bottom-article">
-                                <ul class="meta-post">
-                                    <li><i class="icon-user"></i><a href="#"> Admin</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-
-
-            </div>
-        </div>
-    </div>
-</section>
+             </div>
+         </div>
+     </div>
+ </section>

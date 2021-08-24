@@ -53,8 +53,7 @@
 
                                  <h4><?= $detail['title'] ?></h4>
                                  <p>
-                                     Simpanan Pendidikan (SIDIK) adalah simpanan Anggota yang disimpan untuk perencanaan biaya Pendidikan, baik biaya pendaftaran masuk sekolah maupun kuliah/pesantren atau daftar ulang . Disetor setiap bulan dengan jangka waktu 10 bln . Bersifat roll over (jika tidak di ambil saat setelah 10 bln) dengan nisbah bagi hasil 20 % setiap bulan untuk anggota penyimpan.
-
+                                     Adalah simpanan Anggota untuk perencanaan biaya Pendidikan, baik biaya pendaftaran masuk sekolah atau kuliah atau pesantren atau daftar ulang. Disetor setiap bulan sesuai jangka waktu sesuai kesepakatan . Dengan nisbah bagi hasil setiap bulan untuk anggota penyimpan.
                                  </p>
                              </div>
                              <hr>
@@ -65,26 +64,25 @@
                                  </p>
                              </div>
                              <hr>
-                             <h4>Persyaratan</h4>
+                             <h4>Mekanisme :</h4>
                              <p>
                              <ul>
                                  <li>Menjadi anggota KOSPE</li>
-                                 <li>Membayar biaya administrasi Rp 10.000,-</li>
-                                 <li>Melakukan penyetoran awal sebesar Rp. 100.000,-</li>
-                                 <li>Simpanan selanjutnya minimal Rp 100.000,-</li>
-                                 <li>Simpanan hanya bisa diambil sesuai tujuan simpanan</li>
+                                 <li>Bebas biaya administrasi bulanan</li>
+                                 <li>Pembukaan Rekening Simpanan Rp.10.000,-</li>
+                                 <li>Penyetoran Awal Sebesar Rp.100.000</li>
+                                 <li>Setoran minimal Rp. 100.000,- / bulan</li>
+                                 <li>Bagi hasil masuk ke rek.Simpanan Pendidikan</li>
                              </ul>
                              </p>
                              <hr>
                              <h4>Bagi Hasil</h4>
                              <p>Ada Bagi Hasil</p>
 
-                             <div class="bottom-article">
-                                 <ul class="meta-post">
-                                     <li><i class="icon-user"></i><a href="#"> Admin</a></li>
-                                 </ul>
-
-                             </div>
+                             <h4>Cara Buka Produk Simpanan</h4>
+                             <iframe width="100%" height="450" src="https://www.youtube.com/embed/gPkT7XZgtfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                             <a href="https://www.youtube.com/channel/UCj7new7-5zDU0eR19fc_zeg" class="btn btn-sm btn-primary">Subscribe Youtube Channel KoSPE</a>
+                             <a href="https://wa.me/628118807177" class="btn btn-sm btn-danger">Tanya CRM KoSPE</a>
                          </div>
                      </div>
                  </article>
