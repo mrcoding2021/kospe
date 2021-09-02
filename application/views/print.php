@@ -172,7 +172,7 @@
                                 <tr>
                                     <td class="q">Alamat Perusahaan</td>
                                     <td class="n">:</td>
-                                    <td class="a"><?= $key->alaamat_pt ?></td>
+                                    <td class="a"><?= $key->alamat_pt ?></td>
                                 </tr>
                                 <tr>
                                     <td class="q">Tlp. Perusahaan</td>
@@ -198,7 +198,7 @@
     </div>
     <div style="font-size:12px;">
         <div style="background-color: #616161;">
-            <h5 style="text-align: center;color: white;">Data Suami/Istri</h5>
+            <h5 style="text-align: center;color: white;">Data Suami/Istri/ Kerabat Tidak Serumah</h5>
         </div>
         <div>
             <table style="width: 100%; padding:12px">
@@ -226,17 +226,17 @@
                                     <td class="n">:</td>
                                     <td class="a"><?= $key->divisi_istri ?></td>
                                 </tr>
+                                <tr>
+                                    <td class="q">Lama Bekerja</td>
+                                    <td class="n">:</td>
+                                    <td class="a"><?= $key->lama_bekerja_istri ?> tahun</td>
+                                </tr>
                             </table>
                         </div>
                     </td>
                     <td>
                         <div style="width: 350px;">
                             <table>
-                                <tr>
-                                    <td class="q">Lama Bekerja</td>
-                                    <td class="n">:</td>
-                                    <td class="a"><?= $key->lama_bekerja_istri ?> tahun</td>
-                                </tr>
                                 <tr>
                                     <td class="q">Tlp. Perusahaan</td>
                                     <td class="n">:</td>
@@ -251,6 +251,16 @@
                                     <td class="q">Tlp. Istri/Suami</td>
                                     <td class="n">:</td>
                                     <td class="a"><?= $key->tlp_istri ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="q">Alamat Kerabat</td>
+                                    <td class="n">:</td>
+                                    <td class="a"><?= $key->alamat_kerabat ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="q">Tlp. Kerabat</td>
+                                    <td class="n">:</td>
+                                    <td class="a"><?= $key->tlp_kerabat ?></td>
                                 </tr>
 
                             </table>

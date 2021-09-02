@@ -16,7 +16,7 @@
       <select name="bulan" class="form-control bulan">
         <option value="0">Semua</option>
         <?php for ($i = 1; $i < 12; $i++) { ?>
-          <option  value="<?= $i ?>"><?= bulan($i) ?></option>
+          <option value="<?= $i ?>"><?= bulan($i) ?></option>
         <?php } ?>
       </select>
     </div>
@@ -25,7 +25,7 @@
       <select name="bulan" class="form-control tahun">
         <option value="0">Semua</option>
         <?php for ($i = 0; $i < 10; $i++) { ?>
-          <option  value="<?= '202' . $i ?>"><?= '202' . $i ?></option>
+          <option value="<?= '202' . $i ?>"><?= '202' . $i ?></option>
         <?php } ?>
       </select>
     </div>
@@ -145,7 +145,7 @@
       var akad = $('.akad option:selected').val()
       var bln = $('.bulan option:selected').val()
       var thn = $('.tahun option:selected').val()
-      
+
       normatif(akad, bln, thn)
     })
 
@@ -205,16 +205,15 @@
     }
 
     $(document).on('click', '.lihat-angsuran', function(e) {
+      var data = $(this).find('.noAkad').serialize()            
       $('#angsur').modal('show')
       $.ajax({
         url: '<?= base_url('pembiayaan/getAngsuran') ?>',
-        data: {
-          'id': $(this).data('id')
-        },
+        data: data,
         dataType: 'json',
         type: 'post',
         success: function(res) {
-          console.log(res)
+          
           if (res.error) {
             $('#listAngsuran').html('Tidak Ada data')
           } else {

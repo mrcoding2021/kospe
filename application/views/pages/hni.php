@@ -42,16 +42,17 @@
                  <h4>Data Pribadi</h4>
                  <hr>
                  <div class="span8">
+                   <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
                    <label for="">ID. Anggota KoSPE</label>
                    <input type="text" name="id_kospe" id="text" class="form-control" placeholder="Nama lengkap" data-rule="text" data-msg="Please enter a valid text" required>
                  </div>
                  <div class="span4 ">
                    <label for="">Jenis Pembiayaan</label>
                    <select name="jns_biaya" id="" class="form-control">
-                     <option value="Modal Usha">Modal Usaha</option>
+                     <option value="Modal Usaha">Modal Usaha</option>
                    </select>
                  </div>
-                 <div class="span4 ">
+                 <div class="span4">
                    <label for="">Pengajuan</label>
                    <select name="pengajuan" id="" class="form-control">
                      <option value="Baru">Baru</option>
@@ -135,7 +136,7 @@
                  </div>
                </div>
                <div class="row">
-                 <h4>Data Suami / Istri</h4>
+                 <h4>Data Suami / Istri / Kerabat Terdekat tidak serumah</h4>
                  <hr>
                  <div class="span4 ">
                    <label for="">Nama</label>
@@ -148,8 +149,18 @@
                    <div class="validation"></div>
                  </div>
                  <div class="span4">
-                   <label for="">No. Tlp</label>
+                   <label for="">No. Tlp Istri / Suami</label>
                    <input type="text" name="tlp_istri" placeholder="08787816481" class="form-control" required>
+                   <div class="validation"></div>
+                 </div>
+                 <div class="span4">
+                   <label for="">Alamat Kerabat tidak serumah</label>
+                   <input type="text" name="alamat_kerabat" placeholder="bekasi" class="form-control" required>
+                   <div class="validation"></div>
+                 </div>
+                 <div class="span4">
+                   <label for="">No. Kerabat tidak serumah</label>
+                   <input type="text" name="tlp_kerabat" placeholder="08787816481" class="form-control" required>
                    <div class="validation"></div>
                  </div>
                </div>
@@ -175,15 +186,15 @@
                  <div class="span4">
                    <label for="">Status Agen Stok HNI</label>
                    <select name="status_agen" id="" class="">
-                     <option value="Agen Biasa">Agen Biasa</option>
-                     <option value="Stock Center">Stock Center</option>
-                     <option value="Distribution Center">Distribution Center</option>
-                     <option value="Agency Center">Agency Center</option>
-                     <option value="Business Center">Business Center</option>
+                     <option value="Agen Biasa">Agen Biasa (AB)</option>
+                     <option value="Stock Center">Stock Center (SC)</option>
+                     <option value="Distribution Center">Distribution Center (DC)</option>
+                     <option value="Agency Center">Agency Center (AC)</option>
+                     <option value="Business Center">Business Center (BC)</option>
                    </select>
                  </div>
                  <div class="span4 ">
-                   <label for="">BC Perekomendasi</label>
+                   <label for="">ID. BC Perekomendasi</label>
                    <input type="text" name="hni" id="subject" class="form-control" placeholder="00513475" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required>
                  </div>
                  <div class="span4 ">
@@ -191,7 +202,7 @@
                    <input type="text" name="nama_led" id="subject" class="form-control" placeholder="Agus Supriyanto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required>
                  </div>
                  <div class="span4 ">
-                   <label for="">Id. LED BC Perekomenasi</label>
+                   <label for="">Id. LED BC Perekomendasi</label>
                    <input type="text" name="id_led" id="subject" class="form-control" placeholder="00513475" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required>
                  </div>
                </div>

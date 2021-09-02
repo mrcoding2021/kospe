@@ -1,6 +1,6 @@
  <form class="input-data-pembiayaan" data-table="tb_datapembiayaan" method="post">
    <!-- data rekening  -->
- 
+
    <h6 class="text-primary">Data Rekening</h6>
    <hr>
    <div class="form-group row">
@@ -102,6 +102,7 @@
      <label class="col-sm-3 col-form-label">Saudara Tidak Serumah</label>
      <div class="col-sm-4">
        <input type="text" name="nama_saudara" class="form-control">
+       <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
      </div>
      <label class="col-sm-2 col-form-label">Telp. Saudara</label>
      <div class="col-sm-3">

@@ -8,16 +8,19 @@
           <h6 class="m-0 font-weight-bold text-primary"><?= $title ?> <span class="float-right">No. Akad : <span class="no_akad"></span> </span></h6>
         </div>
         <div class="card-body">
-          <div class="form-group row d-flex">
-            <label class="col-sm-2 col-form-label">Cari No. Akad</label>
-            <div class="col-sm-4">
-              <input type="text" name="cari_noAkad" id="AkadNo" class="form-control">
+          <form action="#" id="dataAngsuran">
+            <div class="form-group row d-flex">
+              <label class="col-sm-2 col-form-label">Cari No. Akad</label>
+              <div class="col-sm-4">
+                <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
+                <input type="text" name="cari_noAkad" id="AkadNo" class="form-control">
+              </div>
+              <div class="">
+                <a href="#cari" class="cariAkad btn btn-info"><i class="fa fa-search"></i> Cari</a>
+                <a href="<?= base_url('pembiayaan/input') ?>" class=" btn btn-danger"><i class="fa fa-eraser"></i> Clear</a>
+              </div>
             </div>
-            <div class="">
-              <a href="#cari" class="cari_akad btn btn-info"><i class="fa fa-search"></i> Cari</a>
-              <a href="<?= base_url('pembiayaan/input') ?>" class=" btn btn-danger"><i class="fa fa-eraser"></i> Clear</a>
-            </div>
-          </div>
+          </form>
           <ul class="nav nav-pills mb-3 border-bottom-primary" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#rekening" role="tab" aria-controls="pills-home" aria-selected="true">Data Rekening</a>
@@ -49,7 +52,6 @@
             <div class="tab-pane fade" id="agunan" role="tabpanel" aria-labelledby="pills-home-tab">
               <?php $this->load->view('admin/pembiayaan/input/agunan'); ?>
             </div>
-
             <div class="tab-pane fade" id="asuransi" role="tabpanel" aria-labelledby="pills-contact-tab"><?php $this->load->view('admin/pembiayaan/input/asuransi'); ?>
             </div>
           </div>
@@ -167,7 +169,7 @@
       });
     })
 
-    $('.cari_akad').click(function(e) {
+    $('.cariAkad').click(function(e) {
       e.preventDefault()
       var cari = $('#AkadNo')
       console.log(cari)
@@ -182,9 +184,7 @@
         $.ajax({
           type: 'POST',
           url: "<?= base_url() ?>pembiayaan/detailData",
-          data: {
-            'id': cari.val()
-          },
+          data: $('#dataAngsuran').serialize(),
           dataType: "json",
           success: function(res) {
             console.log(res)

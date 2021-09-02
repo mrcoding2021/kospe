@@ -46,6 +46,7 @@
                 <hr>
                 <div class="span4 ">
                   <label for="">Jenis Pembiayaan</label>
+                  <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
                   <select name="jns_biaya" id="" class="form-control">
                     <option value="Modal Usha">Modal Usaha</option>
                     <option value="Multiguna">Multiguna</option>
@@ -177,7 +178,7 @@
                 </div>
                 <div class="span4 ">
                   <label for="">Alamat Instansi / Perusahaan</label>
-                  <input type="text" name="alaamat_pt" id="subject" class="form-control" placeholder="Jl/ mangga Besar, Bekasi" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required>
+                  <input type="text" name="alamat_pt" id="subject" class="form-control" placeholder="Jl/ mangga Besar, Bekasi" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required>
                   <div class="validation"></div>
                 </div>
                 <div class="span4 ">
@@ -286,7 +287,7 @@
                   <div class="validation"></div>
                 </div>
               </div>
-              
+
               <div class="row">
                 <h4>Pengajuan Pembiayaan</h4>
                 <hr>

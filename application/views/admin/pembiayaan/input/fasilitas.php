@@ -5,6 +5,7 @@
         <label class="col-sm-1 col-form-label">No. Akad</label>
         <div class="col-sm-5">
           <input type="text" name="no_akad" class="form-control">
+          <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
         </div>
       </div>
     </div>

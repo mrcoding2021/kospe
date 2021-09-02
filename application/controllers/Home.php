@@ -228,7 +228,7 @@ class Home extends CI_Controller
 			'lama_bekerja' =>	htmlspecialchars($_POST['lama_bekerja']),
 			'divisi'			=>	htmlspecialchars($_POST['divisi']),
 			'atasan'			=>	htmlspecialchars($_POST['atasan']),
-			'alaamat_pt'	=>	htmlspecialchars($_POST['alaamat_pt']),
+			'alamat_pt'			=>	htmlspecialchars($_POST['alamat_pt']),
 			'tlp_pt'			=>	htmlspecialchars($_POST['tlp_pt']),
 			'ext_pt'			=>	htmlspecialchars($_POST['ext_pt']),
 			'hni'					=>	htmlspecialchars($_POST['hni']),
@@ -241,6 +241,8 @@ class Home extends CI_Controller
 			'lama_bekerja_istri'	=>	htmlspecialchars($_POST['lama_bekerja_istri']),
 			'tlp_istri'						=>	htmlspecialchars($_POST['tlp_istri']),
 			'ext_istri'						=>	htmlspecialchars($_POST['ext_istri']),
+			'alamat_kerabat'						=>	htmlspecialchars($_POST['alamat_kerabat']),
+			'tlp_kerabat'						=>	htmlspecialchars($_POST['tlp_kerabat']),
 
 			// Data Penghasilan
 			'penghasilan'					=>	str_replace('.', '', htmlspecialchars($_POST['penghasilan'])),

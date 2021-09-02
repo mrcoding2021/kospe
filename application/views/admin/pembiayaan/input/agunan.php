@@ -3,17 +3,18 @@
    <div class="form-group row">
      <label class="col-sm-1 col-form-label">No. Akad</label>
      <div class="col-sm-3">
+       <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
        <input type="text" name="no_akad" class="form-control">
      </div>
      <label class="col-sm-2 col-form-label">Tipe Agunan</label>
      <div class="col-sm-3">
        <select name="tipe_agunan" class="form-control">
-       
+
          <option>Pilih Jenis Agunan</option>
          <?php $tipe = $this->db->get('tipe_agunan')->result();
           foreach ($tipe as $t) { ?>
            <option value="<?= $t->alias ?>"><?= $t->nama ?></option>
-           
+
          <?php } ?>
        </select>
      </div>
@@ -217,57 +218,56 @@
  </form>
 
  <script>
-     $('.shm').hide()
-     $('.bpkb-motor').hide()
-     $('.bpkb-mobil').hide()
-     $('.emas').hide()
-     $('.cascol').hide()
-     $('.personal').hide()
-     $('.corporate').hide()
-     $('.spph').hide()
+   $('.shm').hide()
+   $('.bpkb-motor').hide()
+   $('.bpkb-mobil').hide()
+   $('.emas').hide()
+   $('.cascol').hide()
+   $('.personal').hide()
+   $('.corporate').hide()
+   $('.spph').hide()
 
-     $("select").change(function() {
-       var str = $(this).val()
-       $('.view').html('')
-       $("select option:selected").each(function() {
-         $('.' + str).show()
-         $('.' + str).siblings().hide()
-         if (str == 'shm' || str == 'bpkb-motor' || str == 'bpkb-mobil' || str == 'emas') {
-           $('input[name="jns_asset"]').val('FIX ASSET')
+   $("select").change(function() {
+     var str = $(this).val()
+     $('.view').html('')
+     $("select option:selected").each(function() {
+       $('.' + str).show()
+       $('.' + str).siblings().hide()
+       if (str == 'shm' || str == 'bpkb-motor' || str == 'bpkb-mobil' || str == 'emas') {
+         $('input[name="jns_asset"]').val('FIX ASSET')
+       } else {
+         $('input[name="jns_asset"]').val('NON-FIX ASSET')
+       }
+     });
+   })
+
+   $('#input-agunan').submit(function(e) {
+     e.preventDefault()
+     var data = $(this).serialize()
+     $.ajax({
+       type: 'POST',
+       url: "<?php echo base_url() ?>pembiayaan/agunan",
+       data: data,
+       dataType: "json",
+       async: false,
+       success: function(result) {
+         console.log(result)
+         if (result.sukses) {
+           Swal.fire({
+             title: 'Berhasil',
+             text: `${result.sukses}`,
+             icon: 'success',
+             confirmButtonText: 'Ok'
+           })
          } else {
-           $('input[name="jns_asset"]').val('NON-FIX ASSET')
+           Swal.fire({
+             title: 'Stop!',
+             html: `${result.error}`,
+             icon: 'error',
+             confirmButtonText: 'Ok'
+           })
          }
-       });
-     })
-
-     $('#input-agunan').submit(function(e) {
-       e.preventDefault()
-       var data = $(this).serialize()
-       $.ajax({
-         type: 'POST',
-         url: "<?php echo base_url() ?>pembiayaan/agunan",
-         data: data,
-         dataType: "json",
-         async: false,
-         success: function(result) {
-           console.log(result)
-           if (result.sukses) {
-             Swal.fire({
-               title: 'Berhasil',
-               text: `${result.sukses}`,
-               icon: 'success',
-               confirmButtonText: 'Ok'
-             })
-           }  else {
-             Swal.fire({
-               title: 'Stop!',
-               html: `${result.error}`,
-               icon: 'error',
-               confirmButtonText: 'Ok'
-             })
-           }
-         }
-       });
-     })
-  
+       }
+     });
+   })
  </script>

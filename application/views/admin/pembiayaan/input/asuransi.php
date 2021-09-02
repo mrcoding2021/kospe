@@ -2,6 +2,7 @@
    <div class="form-group row">
      <label for="1" class="col-md-1 col-form-label">No. Akad</label>
      <div class="col-sm-3">
+       <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
        <input type="text" name="no_akad" class="form-control">
      </div>
      <label for="1" class="col-md-2 col-form-label">Jenis Asuransi</label>

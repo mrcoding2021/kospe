@@ -50,6 +50,7 @@
                   <div><?= $this->session->flashdata('alert') ?></div>
                   <form class="user" action="<?= base_url('auth/login') ?>" method="post">
                     <div class="form-group">
+                      <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
                       <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email" name="username">
                     </div>
                     <div class="form-group">

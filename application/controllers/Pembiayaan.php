@@ -331,8 +331,10 @@ class Pembiayaan extends CI_Controller
 
   public function detail()
   {
-    if ($_POST['id']) {
-      $id = $_POST['id'];
+
+    $id = $this->input->post('cari_akad');
+    // $id = '0103/AKD-MRBH/KOSPE/XII/2020';
+    if ($id) {
       $this->db->where('no_akad', $id);
       $result = $this->db->get('tb_datapembiayaan')->row();
       if ($result != null) {
@@ -420,14 +422,9 @@ class Pembiayaan extends CI_Controller
   public function inputAngsuran()
   {
     // $akad = '0014/AKD-MRBH/USPPS/KOSPE/III/2021';
-    $akad = $_POST['no_akad'];
+    $akad = $this->input->post('no_akad');
     $this->db->where('no_akad', $akad);
     $no_akad = $this->db->get('tb_datapembiayaan')->row();
-
-    // $this->db->where('no_akad', $akad);
-    // $jumlah = $this->db->get('tb_jumlahpembiayaan')->row();
-    // var_dump($no_akad);
-    // die;
     if ($no_akad == null) {
       $msg = array(
         'error' => 'No. Akad tidak ditemukan!',
@@ -456,7 +453,7 @@ class Pembiayaan extends CI_Controller
       } elseif ($_POST['sisa_mgn'] > 0 || $data['angsuran_ke'] != 'LUNAS') {
         $this->db->insert('tb_angsuran', $data);
         $msg = array(
-          'sukses' => 'Semua data BERHASIL terinput ke database',
+          'sukses' => 'Semua data BERHASIL terinput',
         );
       } else {
         $msg = array(
@@ -723,7 +720,7 @@ class Pembiayaan extends CI_Controller
         if ($detail != null) {
           $jatuh_tempo = date("Y-m-d", strtotime($key->tgl_dropping . ' + ' . $detail->jangka . ' Months'));
 
-        
+
           $this->db->where('no_akad', $akad);
           $this->db->order_by('id', 'desc');
           $angsuran = $this->db->get('tb_angsuran')->result();
@@ -766,7 +763,7 @@ class Pembiayaan extends CI_Controller
             'pencairan' => $key->tgl_dropping . '<br>' . $key->nama,
             'jkw' => ($detail->jangka) ? $detail->jangka : '',
             'jatuh_tempo' => $jatuh_tempo,
-            'pembiayaan' => rupiah($detail->hrg_beli) . '<br><a href="#angsur" data-toggle="modal" class="lihat-angsuran badge badge-primary" data-id="' . $key->no_akad . '">Lihat Angsuran</a>',
+            'pembiayaan' => rupiah($detail->hrg_beli) . '<br><a href="#angsur" data-toggle="modal" class="lihat-angsuran badge badge-primary"><form class="noAkad"><input type="hidden" name="id" value="' . $key->no_akad . '"><input type="hidden" name="' . $this->security->get_csrf_token_name() . '" value="' . $this->security->get_csrf_hash() . '" style="display: none"></form>Lihat Angsuran</a>',
             'saldo_pokok' => rupiah($angsuran[0]->sisa_pokok),
             'saldo_margin' => rupiah($angsuran[0]->sisa_margin),
             'tunggakan_pokok' => rupiah($tg_pokok),
@@ -1045,7 +1042,7 @@ class Pembiayaan extends CI_Controller
   {
 
     // $id = "0024/AKD-MRBH/USPPS/KOSPE/V/2021";
-    $id = $this->input->post('id');
+    $id = $this->input->post('cari_noAkad');
     $this->db->where('no_akad', $id);
     $data = $this->db->get('tb_datapembiayaan')->row();
 
