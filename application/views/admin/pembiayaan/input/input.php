@@ -99,13 +99,13 @@
      </div>
    </div>
    <div class="form-group row">
-     <label class="col-sm-3 col-form-label">Saudara Tidak Serumah</label>
+     <label class="col-sm-2 col-form-label">Saudara Tidak Serumah</label>
      <div class="col-sm-4">
        <input type="text" name="nama_saudara" class="form-control">
        <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
      </div>
      <label class="col-sm-2 col-form-label">Telp. Saudara</label>
-     <div class="col-sm-3">
+     <div class="col-sm-4">
        <input type="text" name="telp_saudara" class="form-control">
      </div>
    </div>

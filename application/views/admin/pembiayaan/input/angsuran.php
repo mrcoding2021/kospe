@@ -109,7 +109,7 @@
  </form>
 
  <div class="modal fade" id="input-angsuran" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog modal-md" role="document">
+   <div class="modal-dialog" role="document">
      <div class="modal-content">
        <div class="modal-header bg-danger text-white">
          <h5 class="modal-title" id="exampleModalLabel">Input Angsuran Bulanan</h5>
@@ -120,71 +120,63 @@
        <div class="modal-body">
          <form method="post" id="input-angsuran-bulanan" action="#">
            <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Tgl. Tranasksi</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Tgl. Tranasksi</label>
                <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
                <input type="date" class="form-control" value="<?= date('Y-m-d') ?>" name="tgl_input">
              </div>
-           </div>
-           <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Nilai Pembayaran</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Nilai Pembayaran</label>
                <input type="text" class="form-control" autofocus name="bayar">
                <input type="hidden" class="form-control" name="angsuran">
                <input type="hidden" id="akad" class=" form-control" name="no_akad">
              </div>
            </div>
+         
            <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Pokok Pembayaran</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Pokok Pembayaran</label>
                <input type="text" class=" form-control" readonly name="pkk">
              </div>
-           </div>
-           <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Margin P-bayaran</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Margin P-bayaran</label>
                <input type="text" class=" form-control" readonly name="mgn">
              </div>
            </div>
+          
            <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Diskon Margin</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Diskon Margin</label>
                <input type="text" class=" form-control" value="0" name="diskon">
              </div>
-           </div>
-           <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Titipan</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Titipan</label>
                <input type="text" class=" form-control" readonly name="titipan">
              </div>
            </div>
            <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Angsuran Ke-</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Angsuran Ke-</label>
                <input type="text" class="form-control" value="1" readonly name="angsuran_ke">
              </div>
-           </div>
-           <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">JKW P-bayaran</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">JKW P-bayaran</label>
                <input type="text" class=" form-control" readonly name="jkw">
              </div>
            </div>
            <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Sisa JKW</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Sisa JKW</label>
                <input type="text" class="form-control" value="11" readonly name="sisa_jkw">
              </div>
-           </div>
-           <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Sisa Pokok</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Sisa Pokok</label>
                <input type="text" class=" form-control" readonly name="sisa_pkk">
              </div>
            </div>
            <div class="form-group row">
-             <label for="1" class="col-md-4 col-form-label">Sisa Margin</label>
-             <div class="col-sm-8">
+             <div class="col-sm-6">
+               <label for="1">Sisa Margin</label>
                <input type="text" class="form-control" readonly name="sisa_mgn">
              </div>
            </div>

@@ -85,7 +85,7 @@
         success: function(result) {
           if (result.sukses) {
             Swal.fire({
-              title: 'Warning',
+              title: 'Berhasil',
               text: `${result}`,
               icon: 'success',
               confirmButtonText: 'Ok'

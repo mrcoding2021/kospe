@@ -169,14 +169,14 @@ class Pembiayaan extends CI_Controller
 
   public function add()
   {
-    if (!$_POST['no_akad']) {
+    if (!$this->input->post('no_akad')) {
       $msg = array(
         'error' => 'No. Akad tidak boleh kosng !',
       );
     } else {
-      $this->db->where('no_akad', $_POST['no_akad']);
+      $this->db->where('no_akad', $this->input->post('no_akad'));
       $no_akad = $this->db->get('tb_datapembiayaan')->row();
-      if ($no_akad) {
+      if ($no_akad != null) {
         $msg = array(
           'error' => 'No. Akad sudah terdaftar, silahkan input no akad baru!',
         );
@@ -443,6 +443,7 @@ class Pembiayaan extends CI_Controller
         'sisa_margin'     => htmlspecialchars($_POST['sisa_mgn'] - $_POST['mgn']),
         'jumlah'          => htmlspecialchars($_POST['bayar']),
         'titipan'         => htmlspecialchars($_POST['titipan']),
+        'diskon'          => htmlspecialchars($_POST['diskon']),
         'dpd'             => (date('d') > (int) $no_akad->tgl_jatuh_tempo) ?  date('d') - (int) $no_akad->tgl_jatuh_tempo : 0
       );
 
@@ -914,7 +915,7 @@ class Pembiayaan extends CI_Controller
     if ($data != null) {
       foreach ($data as $key) {
         $akad =  $key->no_akad;
-        // $akad = '031/MBA/KSP-26/XII/2019';['']
+        // $akad = '0026/AKD-MRBH/USPPS/KOSPE/V/2021';
         $this->db->where('no_akad', $akad);
         $this->db->select_sum('margin', 'total');
         $angsuran = $this->db->get('tb_angsuran')->row();
@@ -926,6 +927,7 @@ class Pembiayaan extends CI_Controller
         $jumlah = $this->db->get('tb_jumlahpembiayaan')->row();
 
         $jatuh_tempo = date("Y-m-d", strtotime($key->tgl_dropping . ' + ' . $jumlah->jangka . ' Months'));
+        
         $result[] = array(
           "no" => $no++,
           "tgl_dropping" => $key->tgl_dropping,
